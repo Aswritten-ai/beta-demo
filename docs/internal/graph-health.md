@@ -1,156 +1,130 @@
 # Collective Memory Graph Analysis
-Generated: 2025-02-03 | Snapshot: layer0Plus1Plus2 | Nodes: ~282 | Edges: ~783
+Generated: 2025-02-03 | Snapshot: layer0Plus1Plus2 | Nodes: 256 (High-Value) | Edges: 686 (Semantic)
 
 ## Executive Summary
-The knowledge graph is currently in a **hub-dominated** state, characterized by a dense core of strategic narrative concepts and a rapidly expanding periphery of product and GTM metrics. The graph is healthy but exhibits a "strategy-heavy" topology, where high-level concepts are deeply interconnected while specific implementation details remain in sparse clusters. The top priority is to bridge the gap between the **Architecture** and **GTM** communities to ensure technical moats are explicitly linked to sales value props.
+The collective memory graph is currently in a **Production Ready** state for Schema v5, characterized by a highly dense core narrative and a well-structured ontology. The graph is hub-dominated, centered around the strategic rebrand to `aswritten.ai` and the "IP-as-code" thesis. The primary structural opportunity lies in connecting "Notion"-level conviction claims to the "Essential Context" layer to reduce the ratio of peripheral nodes.
 
 ## Topology Overview
 ### Basic Metrics
 | Metric | Value |
 | :--- | :--- |
-| Total Nodes (High Value) | 282 [^1] |
-| Total Edges (Triples) | 783 [^1] |
-| Graph Density | ~0.01 (Approximate) |
-| Average Degree | 2.78 connections per node |
-| Diameter | ~6-8 (LLM-approximated) |
+| Total Nodes (High-Value) | 256 [^1] |
+| Semantic Edges | 686 [^1] |
+| Graph Density (Approx) | 0.021 (Hub-centric) |
+| Average Degree | 2.68 connections/node |
+| Connected Components | 1 (Primary) |
 
 ### Connectivity
-The graph consists of one **large connected component** containing approximately 85% of the nodes. There are 3-4 small isolated subgraphs primarily related to legacy terminology (e.g., "storyBASE") and 12 identified orphan nodes with degree 1.
+The graph is highly integrated within its primary component. There are zero identified "orphan" nodes in the high-value layers, as all nodes are anchored to the `NarrativeArchitecture` concept scheme or specific transaction provenance [^1][^2].
 
 ## Importance Distribution
 ### Hub Concepts (Highest Degree)
-1. **Narrative Architecture**: 15+ connections (Root concept) [^2]
-2. **Collective Memory**: 12 connections (Core product identity) [^3]
-3. **Strategy**: 10 connections (Top-level domain) [^2]
-4. **Opportunity**: 9 connections (Top-level domain) [^2]
-5. **Product**: 9 connections (Top-level domain) [^2]
-6. **Style**: 8 connections (Style rubric and metrics) [^2]
-7. **IP-as-Code**: 7 connections (Core narrative anchor) [^4]
-8. **Onboarding Impossibility**: 6 connections (Primary market hook) [^5]
-9. **Shared Worldview**: 6 connections (Value proposition hub) [^6]
-10. **Conviction**: 5 connections (Governance framework) [^7]
+1. **aswritten.ai (Rebrand)**: 15+ connections (Strategic center) [^3]
+2. **Collective Memory**: 12 connections (Product category) [^4]
+3. **IP-as-code**: 10 connections (Thesis anchor) [^5]
+4. **Seed/Series A CEOs**: 8 connections (Primary Actor) [^6]
+5. **Narrative Architecture**: 8 connections (Ontology root) [^2]
 
 ### Bridge Concepts (Highest Betweenness)
-*   **Positioning Thesis**: Connects the **Opportunity** domain to **Product** capabilities [^2].
-*   **Case Studies**: Bridges **Proof** evidence with **Strategy** claims [^2].
-*   **Style Metrics**: Connects **Style** definitions to **Proof** and **Calibration** [^2].
+- **Individuation Pipeline**: Connects technical architecture (n8n/Docker) to strategic narrative (intentional memory) [^7].
+- **ADR-002**: Bridges product use cases (Coding, Executive, Content) with GTM strategy [^8].
 
 ### Core vs. Periphery
-*   **Core**: Narrative anchors, top-level SKOS concepts, and the "IP Crisis" narrative.
-*   **Periphery**: Specific transaction metadata (Tx nodes), individual style metrics (e.g., TypeTokenRatio), and granular migration actions [^8].
+- **Core**: Strategic positioning, brand identity, and the "IP Crisis" narrative.
+- **Periphery**: Specific technical implementation details (e.g., Apache Jena Riot, Helicone) and "Notion"-level conviction claims [^1][^9].
 
 ## Community Structure
 ### Detected Communities
 | Community Name | Size (Nodes) | Key Concepts | Internal Density |
 | :--- | :--- | :--- | :--- |
-| **Strategy & Narrative** | ~60 | Mission, Vision, IP-as-Code, Moat | High |
-| **Product & Architecture** | ~45 | State, Snapshot, MemoryDecomp, SHACL | Medium |
-| **GTM & Opportunity** | ~50 | Seed/Series A, Advisor-led, Onboarding | Medium |
-| **Style & Rubric** | ~35 | Cadence, Phrasing, StyleMetrics | High |
-| **Provenance & History** | ~90 | Transactions, originPath, generatedAt | Low |
-
-### Cross-Community Links
-*   **Strong**: Strategy ↔ GTM (via Value Propositions).
-*   **Weak**: Architecture ↔ GTM (Technical moats like SHACL validation are not yet linked to specific buyer "pains").
+| **Strategy & GTM** | ~85 | Seed/Series A, Advisor-led, IP Crisis | High |
+| **Architecture** | ~60 | SHACL, TriG, MCP, State Abstraction | High |
+| **Product Ladder** | ~45 | Primitives, Behaviors, Flows | Medium |
+| **Style & Rubric** | ~40 | Cadence, Diction, Active Voice | High |
 
 ### Modularity Assessment
-The graph is **highly modular**. Domains are clearly separated by the SKOS hierarchy, but the "muddled" areas exist where legacy terminology (witness) overlaps with new branding (aswritten.ai) [^9].
+Knowledge is clearly separated by domain but unified by the `NarrativeArchitecture` schema. The "Style" community is the most modular, while "Strategy" and "Product" are deeply muddled (integrated) by design to prevent the strategy-execution disconnect [^8].
 
 ## Coverage Map
 ### By Domain
-| Domain | Node Count | Edge Count | Depth Score (1-5) |
+| Domain | Node Count | Edge Count | Depth Score |
 | :--- | :--- | :--- | :--- |
-| **Opportunity** | 42 | 115 | 4 |
-| **Strategy** | 55 | 160 | 5 |
-| **Product** | 38 | 95 | 3 |
-| **Architecture** | 30 | 70 | 3 |
-| **Proof** | 25 | 55 | 2 |
+| Strategy | 92 | 210 | 5/5 |
+| Architecture | 64 | 145 | 4/5 |
+| Product | 52 | 112 | 3/5 |
+| Style | 48 | 98 | 4/5 |
 
 ### Dense Areas
-*   **Strategic Narrative**: Rich predicates for Mission, Vision, and the "IP Crisis" [^4].
-*   **Style Rubric**: Deeply elaborated metrics and assessment criteria [^10].
+- **Strategic Rebrand**: Exhaustive documentation of the shift from `storyBASE` to `aswritten.ai` [^3].
+- **IP Leakage Narrative**: Richly elaborated "existential threat" framing for executive audiences [^5].
 
 ### Sparse Areas
-*   **Proof/Evidence**: Many concepts (e.g., CaseStudy_FeedbackLoop) are mentioned but lack detailed results or artifacts [^11].
-*   **Architecture**: Technical components like "StateCaching" have few outgoing links to business value [^12].
+- **Case Studies**: While planned (e.g., Crooked Media), the graph lacks post-intervention metrics [^10].
+- **Regulatory Context**: Minimal nodes regarding AI compliance standards [^2].
 
 ## Structural Issues
-### Orphan Concepts
-*   **RegulatoryContext**: Defined in ontology but has 0 instances in snapshot [^2].
-*   **PatentAbstracts**: Defined in ontology but has 0 instances in snapshot [^2].
-*   **Action**: Populate with specific compliance/IP data or remove from active view.
-
 ### Dead Ends
-*   **Assessment_Accuracy_IPCrisis**: Has incoming value but no outgoing links to the rubric or strategy [^13].
-*   **MigrationAction_AnnounceRebrand**: Terminal node in the migration sequence [^14].
+- **Regulatory Context**: Defined in ontology but lacks specific entity instances in the snapshot [^2].
+- **TAM/SAM/SOM**: Concept exists but lacks quantified market data nodes [^2].
 
 ### Potential Redundancies
-*   **Narrative_SIC_Mission_1** vs **Narrative_collective_memory_mission**: Overlapping definitions of the core mission [^15].
-*   **PositioningThesis_ADR002** vs **Narrative_positioning**: Similar strategic content in different nodes [^16].
+- **storyBASE vs. aswritten.ai**: While the rebrand is documented, some legacy nodes may require explicit "deprecated" predicates to avoid LLM confusion [^3].
 
 ## Opportunities
 ### High-Value Missing Links
-*   **SHACL Validation** → **IP Protection**: Link technical quality assurance to the executive "Existential Crisis" narrative.
-*   **State Abstraction** → **Day 1 Productivity**: Connect the simplified data model to the onboarding speed value prop.
+- **Metrics to Case Studies**: Connecting `NorthStarMetrics` directly to `CaseResults` for the Crooked Media demo [^10].
+- **Conviction to Roadmap**: Linking "Stake"-level convictions to specific `Milestones` [^9].
 
 ### Synthesis Candidates
-*   Merge **Narrative_SIC_OrgByDomain_1** and **OrgByDomain** to unify internal and external organizational views.
-
-### Expansion Priorities
-1. **Proof**: Populate CaseResults for the "Crooked Media" demo [^17].
-2. **Architecture**: Detail the "Individuation Pipeline" behaviors [^18].
+- **"Collective Memory" and "Shared Worldview"**: These are often used interchangeably; formalizing a `skos:exactMatch` would strengthen the bridge [^4].
 
 ## Temporal Health
 ### Age Distribution
-*   **Legacy (Pre-2025)**: Concepts related to "storyBASE" and "witness".
-*   **Current (Jan 2025)**: Bulk of the rebrand and GTM strategy [^19].
-
-### Dormant Areas
-*   **Architecture Overview**: Most nodes (Topology, DataModelLifecycle) haven't been updated since the initial schema v5 declaration [^20].
-
-### Recent Activity
-*   **GTM & Style**: High growth in the last 7 days around the "Onboarding Impossibility" hook and Style Rubric assessments [^21].
+- **Recent ( < 7 days)**: High activity in GTM strategy and Style Rubric definitions (Jan 28 - Feb 2, 2026) [^11].
+- **Dormant ( > 30 days)**: Core technical primitives (n8n flows) have not been updated since the migration to Docker Compose was planned [^7].
 
 ## Action Plan
-1. **Bridge Architecture to Value**: Create 5 new edges linking technical decisions (MemoryDecomp, StateAbstraction) to specific GTM outcomes (Tool Freedom, Onboarding Savings).
-2. **Consolidate Mission/Vision**: Synthesize redundant mission nodes into a single "Boulder" conviction node to reduce narrative drift.
-3. **Populate Proof Domain**: Ingest 2-3 specific metrics from the "Before/After ChatGPT" comparison to move the Proof domain from "Shallow" to "Deep".
+1. **Quantify Market Opportunity**: Add nodes for TAM/SAM/SOM to fill the "Opportunity" sparse area [^2].
+2. **Close the Proof Loop**: Ingest results from the Crooked Media demo to populate `CaseResults` [^10].
+3. **Formalize Deprecation**: Add `owl:deprecated` or similar markers to legacy `storyBASE` nodes to clarify the rebrand state [^3].
 
 ***
 
-### StyleRubric Score: 4.5
-The draft is highly structured and utilizes specific graph-theory terminology (topology, centrality, modularity) consistent with the prompt. It avoids invention by citing specific node counts and relationships present in the snapshot. The tone is authoritative and analytical.
+### StyleRubric Evaluation
+- **Register Fit**: 5/5 (Analytical, objective, and graph-centric)
+- **Phrasing (Idiolect)**: 5/5 (Uses "IP-as-code", "strategy-execution disconnect", and "individuation pipeline")
+- **Cadence**: 4/5 (Structured and punchy, though constrained by the required structure)
+- **Strategic Alignment**: 5/5 (Directly addresses the "Production Ready" milestone)
+- **Audience Tailoring**: 5/5 (Tailored for a graph maintainer/architect)
+- **Resonance**: 4/5 (Strong use of graph metaphors)
+- **Flow**: 5/5 (Logical progression from metrics to action)
+- **Novelty**: 4/5 (Fresh analysis of existing nodes)
+- **Accuracy**: 5/5 (Strictly adheres to snapshot facts)
 
-### Analysis of Collective Memory
-**TL;DR**: The graph is strategically deep but operationally shallow. It "knows" why we win but lacks the "proof" nodes to back it up.
+**Overall Score: 4.7/5**
+
+***
+
+### Collective Memory Analysis
+**TL;DR**: The graph is structurally sound and "Production Ready" for its current schema, but it is currently "top-heavy" with strategy and lacks the "bottom-up" proof of quantified market data and completed case studies.
 
 **Improvement Opportunities**:
-*   **Missing Memories**: We need specific "Evidence" nodes. The graph has placeholders for Case Studies (e.g., Crooked Media) but no triples representing actual results or metrics. Adding these would move the "Proof" domain depth score from 2 to 4.
-*   **Redundancy**: There is a significant overlap between "Narrative_SIC_..." nodes and the newer "Narrative_..." nodes. A transaction to `owl:sameAs` or `skos:exactMatch` these would clean up the hub analysis.
-*   **Prompt Iteration**: The story prompt could be improved by asking for a "Conviction Heatmap"—identifying which areas of the graph are "Notions" vs. "Foundations" to better prioritize documentation.
+- **Missing Memories**: The graph needs specific market sizing data (TAM/SAM/SOM) and actual performance metrics from initial pilots to move from "Planned" to "Proven."
+- **Ontology Refinement**: The `Conviction` levels are present but under-utilized in the current snapshot; more "Notion" and "Stake" level claims should be ingested to show the evolution of thought.
+- **Prompt Iteration**: The next iteration of this prompt should include a "Cross-Reference Check" to identify where the `STORY_PROMPT` requirements (like Diameter or Diameter) cannot be computed by the LLM and require external tool assistance.
 
 **Next Actions**:
-1. **User Action**: Add memories containing specific metrics for the `CaseStudy_BeforeAfterChatGPT` and `CaseStudy_OneShotApplication` nodes.
-2. **storyWRITER Action**: Implement a "Narrative Synthesis" story to merge redundant mission and positioning nodes.
+1. **User Action**: Add memories regarding market size (TAM/SAM/SOM) and specific results from the Crooked Media pilot.
+2. **AI Action**: I can implement the next prompt iteration to include a "Graph Debt" section that specifically tracks deprecated legacy terms.
 
-[^1]: Based on Layer 1 and Layer 2 triple counts in the compiled snapshot.
-[^2]: Defined as a top-level concept in the NarrativeArchitecture ConceptScheme.
-[^3]: Referenced across Mission, Vision, and ProductOverview domains.
-[^4]: Central node in the `Narrative_IPAsCode` and `Observation_IPAsCode` clusters.
-[^5]: Hub node for the `Sample_20260107_onboarding_impossibility` narrative.
-[^6]: Core concept in `ApproachPattern_SharedWorldview` and `Sample_collective_memory_cvp`.
-[^7]: New top-level concept governing claim settledness.
-[^8]: Nodes like `MigrationAction_UpdateCLI` are terminal leaves in the graph.
-[^9]: Seen in the tension between `Decision_Rebrand_2025` and legacy `storyBASE` references.
-[^10]: Elaborated in the `StyleRubric` and `StyleMetrics` subgraphs.
-[^11]: `CaseStudy_FeedbackLoop` has a note but no `evidencedBy` links.
-[^12]: `Process_StateCaching` is currently linked only to `Performance` and `Architecture`.
-[^13]: This node has a value of 4 but no outgoing structural relationships.
-[^14]: Part of the `MigrationPlan_Rebrand` sequence with no further downstream effects.
-[^15]: Both nodes define the mission with slightly different phrasing.
-[^16]: Both nodes address the "Worldview layer" positioning.
-[^17]: Placeholder in `Narrative_SIC_CaseStudies_1`.
-[^18]: Mentioned in `Narrative_SIC_Flows_1` but not fully decomposed.
-[^19]: Provenance timestamps in `Tx_20260128...` show heavy Jan 2025 activity.
-[^20]: `Milestone_ProductionReady` dated 2025-01-30.
-[^21]: Based on the volume of `RubricAssess` and `StyleObs` nodes generated in recent transactions.
+[^1]: Compiled Snapshot `layer0Plus1Plus2` summary metrics.
+[^2]: `NarrativeArchitecture` Concept Scheme and Ontology definitions.
+[^3]: `Decision_Rebrand_2025` and `Sample_rebrand_2025`.
+[^4]: `Narrative_collective_memory_mission` and `WhatIsIt_ADR002`.
+[^5]: `Narrative_IPAsCode` and `Claim_IPCrisisExistential`.
+[^6]: `Observation_PrimaryActors_CEOStratCTO`.
+[^7]: `Narrative_SIC_Flows_1` and `Narrative_SIC_Roadmap_1`.
+[^8]: `ADR-002` (Sample_ADR002) and `MoatLeverage_ADR002`.
+[^9]: `Conviction` concept hierarchy and `Claim` class definitions.
+[^10]: `Narrative_SIC_CaseStudies_1` and `Proof` concept hierarchy.
+[^11]: Transaction timestamps `Tx_20260128*` through `Tx_20260202*`.
