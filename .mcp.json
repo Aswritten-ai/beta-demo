@@ -2,7 +2,8 @@
   "mcpServers": {
     "aswritten": {
       "type": "http",
-      "url": "https://n8n.aswritten.ai/mcp/aswritten"
+      "url": "https://n8n.aswritten.ai/mcp/beta-demo"
+      
     }
   }
 }
