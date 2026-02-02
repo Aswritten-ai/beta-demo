@@ -54,6 +54,3 @@ Thumbs.db
 # Logs
 *.log
 /logs/
-
-# Generated artifacts
-manifest.json
