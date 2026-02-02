@@ -2,7 +2,7 @@
 
 This repository is connected to [aswritten.ai](https://aswritten.ai) for collective memory management.
 
-**MCP Endpoint:** `https://n8n.aswritten.ai/mcp/{GITHUB_REPO}`
+**MCP Endpoint:** `https://n8n.aswritten.ai/mcp/beta-demo`
 
 ## What is Collective Memory?
 
