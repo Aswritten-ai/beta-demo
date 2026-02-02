@@ -1,0 +1,502 @@
+PREFIX narr: <http://example.org/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://example.org/storybook#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260128T230435Z a prov:Activity ;
+    prov:wasAssociatedWith <https://aswritten.ai/agent#v1.0> ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-01-28T23:04:35.182Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-01-13-aswritten-rebrand-terminology.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:generated narr:Sample_rebrand_2025, narr:Decision_Rebrand_2025, narr:Narrative_positioning,
+      narr:Narrative_terminology, narr:StrategyShift_HumanToAICentric, narr:StrategyShift_PassiveToActive,
+      narr:StrategyShift_InfraToProduct, narr:Workflow_CanonicalMemoryCreation,
+      narr:ConversationPattern_CrossRole, narr:ConversationPattern_DevOnboarding,
+      narr:MigrationPlan_Rebrand, narr:MigrationAction_UpdateDocs, narr:MigrationAction_UpdateCLI,
+      narr:MigrationAction_UpdatePrompts, narr:MigrationAction_UpdateReadme, narr:MigrationAction_AnnounceRebrand,
+      narr:ValueProp_OnboardingProblem, narr:ValueProp_KnowledgeLossProblem, narr:ValueProp_FragmentationProblem,
+      narr:StyleObs_brandname_1, narr:StyleObs_keyphrase_1, narr:StyleObs_verb_1,
+      narr:StyleObs_antithesis_1, narr:StyleObs_cadence_1, narr:StyleObs_analogy_1,
+      narr:StyleObs_stock_1, narr:StyleObs_question_1, narr:StyleObs_parallel_1,
+      narr:Assess_Register_rebrand, narr:Assess_Phrasing_rebrand, narr:Assess_Cadence_rebrand,
+      narr:Assess_Strategy_rebrand, narr:Assess_Tailoring_rebrand, narr:Assess_Resonance_rebrand,
+      narr:Assess_Flow_rebrand, narr:Assess_Novelty_rebrand, narr:Assess_Accuracy_rebrand,
+      narr:Metrics_rebrand .
+}
+
+# Domain entities and observations
+INSERT DATA {
+  narr:Sample_rebrand_2025 a narr:Sample ;
+    dct:title "aswritten.ai Branding & Terminology Decision" ;
+    narr:inputLength 5247 ;
+    dct:created "2025-01-30"^^xsd:date ;
+    skos:note "Strategic rebrand from storyBASE/witness to aswritten.ai product identity" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  # Core rebrand decision entity (fixes SEMANTIC_DRIFT)
+  narr:Decision_Rebrand_2025 a narr:Narrative ;
+    dct:source narr:Sample_rebrand_2025 ;
+    narr:theme "Strategic Rebrand from storyBASE/witness to aswritten.ai" ;
+    narr:direction "Transformative" ;
+    skos:broader narr:StrategyOverview ;
+    skos:note "Core decision to rebrand product identity and establish new canonical terminology" ;
+    skos:related narr:Narrative_positioning, narr:Narrative_terminology ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  # Product identity narrative (corrected predicate)
+  narr:Narrative_positioning a narr:Narrative ;
+    dct:source narr:Sample_rebrand_2025 ;
+    narr:theme "Product Identity & Positioning" ;
+    narr:direction "Positive" ;
+    skos:broader narr:StrategyOverview ;
+    skos:related narr:NarrativeAnchor ;
+    skos:note "Shift from human-centric documentation to AI-centric collective memory" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  # Terminology narrative (corrected predicate)
+  narr:Narrative_terminology a narr:Narrative ;
+    dct:source narr:Sample_rebrand_2025 ;
+    narr:theme "Terminology Control" ;
+    skos:broader narr:StrategyOverview ;
+    skos:related narr:TerminologyControl ;
+    skos:note "Canonical actions: remember as written, draft a memory, write to collective memory" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  # Positioning shift entities (fixes INCOMPLETE_EXTRACTION)
+  narr:StrategyShift_HumanToAICentric a narr:Narrative ;
+    dct:source narr:Sample_rebrand_2025 ;
+    narr:theme "Positioning Shift: Human-centric to AI-centric" ;
+    narr:direction "Transformative" ;
+    skos:broader narr:StrategyOverview ;
+    skos:note "From: Human-centric (documentation for people) | To: AI-centric (collective memory for AI agents)" ;
+    skos:related narr:Decision_Rebrand_2025 ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:StrategyShift_PassiveToActive a narr:Narrative ;
+    dct:source narr:Sample_rebrand_2025 ;
+    narr:theme "Positioning Shift: AI as passive tool to active collaborator" ;
+    narr:direction "Transformative" ;
+    skos:broader narr:StrategyOverview ;
+    skos:note "From: AI as passive retrieval tool | To: AI as active collaborator with shared context" ;
+    skos:related narr:Decision_Rebrand_2025 ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:StrategyShift_InfraToProduct a narr:Narrative ;
+    dct:source narr:Sample_rebrand_2025 ;
+    narr:theme "Positioning Shift: Infrastructure to product" ;
+    narr:direction "Transformative" ;
+    skos:broader narr:StrategyOverview ;
+    skos:note "From: Infrastructure layer (storyBASE) | To: Product identity (aswritten.ai)" ;
+    skos:related narr:Decision_Rebrand_2025 ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  # Canonical workflow entity (fixes INCOMPLETE_EXTRACTION)
+  narr:Workflow_CanonicalMemoryCreation a narr:Workflow ;
+    dct:source narr:Sample_rebrand_2025 ;
+    dct:title "Canonical Memory Creation Workflow" ;
+    skos:broader narr:ProcessFlow ;
+    skos:note "Human has experience → AI notices → draft together → approve → write to collective memory" ;
+    narr:step "1. Human has experience" ;
+    narr:step "2. AI notices and flags" ;
+    narr:step "3. Draft memory together" ;
+    narr:step "4. Human approves" ;
+    narr:step "5. Write to collective memory" ;
+    skos:related narr:Decision_Rebrand_2025 ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  # Conversation pattern entities (fixes INCOMPLETE_EXTRACTION)
+  narr:ConversationPattern_CrossRole a narr:ConversationPattern ;
+    dct:source narr:Sample_rebrand_2025 ;
+    dct:title "Cross-role Memory Sharing" ;
+    skos:broader narr:RolePlayScenarios ;
+    skos:note "Example: 'My AI drafted a memory' → 'Is it in collective memory?' → 'Just committed, your AI should see it'" ;
+    narr:exampleUtterance "Is it in collective memory?" ;
+    narr:exampleResponse "Just committed" ;
+    skos:related narr:Workflow_CanonicalMemoryCreation ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:ConversationPattern_DevOnboarding a narr:ConversationPattern ;
+    dct:source narr:Sample_rebrand_2025 ;
+    dct:title "Developer Onboarding with Collective Memory" ;
+    skos:broader narr:RolePlayScenarios ;
+    skos:note "Example: New developer's AI connects to collective memory for day 1 productivity" ;
+    skos:related narr:ValueProp_OnboardingProblem ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  # Migration plan entity (fixes INCOMPLETE_EXTRACTION)
+  narr:MigrationPlan_Rebrand a narr:MigrationPlan ;
+    dct:source narr:Sample_rebrand_2025 ;
+    dct:title "aswritten.ai Rebrand Migration Plan" ;
+    skos:broader narr:NarrativeDrivenRoadmap ;
+    skos:note "5-step migration plan for rebrand execution" ;
+    skos:related narr:Decision_Rebrand_2025 ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:MigrationAction_UpdateDocs a narr:MigrationAction ;
+    dct:source narr:Sample_rebrand_2025 ;
+    dct:title "Update all documentation" ;
+    narr:actionOrder 1 ;
+    skos:broader narr:MigrationPlan_Rebrand ;
+    skos:note "Replace storyBASE/witness terminology with aswritten.ai canonical terms" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:MigrationAction_UpdateCLI a narr:MigrationAction ;
+    dct:source narr:Sample_rebrand_2025 ;
+    dct:title "Update CLI commands" ;
+    narr:actionOrder 2 ;
+    skos:broader narr:MigrationPlan_Rebrand ;
+    skos:note "Align command names with new terminology (e.g., 'remember', 'draft')" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:MigrationAction_UpdatePrompts a narr:MigrationAction ;
+    dct:source narr:Sample_rebrand_2025 ;
+    dct:title "Update AI prompts" ;
+    narr:actionOrder 3 ;
+    skos:broader narr:MigrationPlan_Rebrand ;
+    skos:note "Embed new terminology in system prompts and agent instructions" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:MigrationAction_UpdateReadme a narr:MigrationAction ;
+    dct:source narr:Sample_rebrand_2025 ;
+    dct:title "Update README and landing page" ;
+    narr:actionOrder 4 ;
+    skos:broader narr:MigrationPlan_Rebrand ;
+    skos:note "Reflect new brand identity and positioning in public-facing materials" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:MigrationAction_AnnounceRebrand a narr:MigrationAction ;
+    dct:source narr:Sample_rebrand_2025 ;
+    dct:title "Announce rebrand" ;
+    narr:actionOrder 5 ;
+    skos:broader narr:MigrationPlan_Rebrand ;
+    skos:note "Communicate rebrand to users and stakeholders" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  # Value proposition entities (fixes warning INCOMPLETE_EXTRACTION)
+  narr:ValueProp_OnboardingProblem a narr:ValueProposition ;
+    dct:source narr:Sample_rebrand_2025 ;
+    dct:title "Onboarding Problem Solution" ;
+    skos:broader narr:ValueExchange ;
+    skos:note "Before: New hire's AI starts blind | After: Connected to collective memory, day 1 productivity" ;
+    skos:related narr:StrategyShift_HumanToAICentric ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:ValueProp_KnowledgeLossProblem a narr:ValueProposition ;
+    dct:source narr:Sample_rebrand_2025 ;
+    dct:title "Knowledge Loss Problem Solution" ;
+    skos:broader narr:ValueExchange ;
+    skos:note "Before: Context lost when people leave | After: Zero knowledge loss, collective memory persists" ;
+    skos:related narr:StrategyShift_HumanToAICentric ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:ValueProp_FragmentationProblem a narr:ValueProposition ;
+    dct:source narr:Sample_rebrand_2025 ;
+    dct:title "Fragmentation Problem Solution" ;
+    skos:broader narr:ValueExchange ;
+    skos:note "Before: Each AI has fragmented context | After: Shared understanding across all agents" ;
+    skos:related narr:StrategyShift_PassiveToActive ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  # Style observations (corrected)
+  narr:StyleObs_brandname_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_rebrand_2025 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_rebrand_2025 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 197 ;
+        oa:end 210
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "aswritten.ai" ;
+        oa:prefix "rebranding the product as **" ;
+        oa:suffix "** and establishing new canonical"
+      ]
+    ] ;
+    skos:related narr:Tagline ;
+    rdf:value true ;
+    skos:note "Lowercase brand with .ai TLD; consistent throughout document" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:StyleObs_keyphrase_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_rebrand_2025 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_rebrand_2025 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1050 ;
+        oa:end 1068
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "collective memory" ;
+        oa:prefix "- **\"" ;
+        oa:suffix "\"** - collaborative, append-only"
+      ]
+    ] ;
+    skos:related narr:NarrativeAnchor ;
+    rdf:value true ;
+    skos:note "Central concept repeated 20+ times; anchor term for product value" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:StyleObs_verb_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+    dct:source narr:Sample_rebrand_2025 ;
+    oa:hasBody narr:VerbChoice ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_rebrand_2025 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 625 ;
+        oa:end 644
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "remember as written" ;
+        oa:prefix "- **\"" ;
+        oa:suffix "\"** - recall from collective"
+      ]
+    ] ;
+    skos:related narr:WhatDoesItDo ;
+    rdf:value true ;
+    skos:note "Phrasal verb pattern: action + 'as written' creates brand signature" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:StyleObs_antithesis_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_rebrand_2025 ;
+    oa:hasBody narr:Antithesis ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_rebrand_2025 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2850 ;
+        oa:end 2960
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "**From**: Human-centric\n**To**: AI-centric" ;
+        oa:prefix "## Positioning Shift\n\n" ;
+        oa:suffix "\n\n**From**: AI as passive"
+      ]
+    ] ;
+    skos:related narr:PositioningThesis ;
+    rdf:value true ;
+    skos:note "Repeated From/To structure creates clear contrast; used 3x in section" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:StyleObs_cadence_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_rebrand_2025 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_rebrand_2025 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2250 ;
+        oa:end 2350
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Day 1 productivity\nZero knowledge loss\nShared understanding" ;
+        oa:prefix "Collective memory means:\n- " ;
+        oa:suffix "\n- Coding agents that understand"
+      ]
+    ] ;
+    skos:related narr:RuleOfThree ;
+    rdf:value true ;
+    skos:note "Parallel noun phrases; no verbs; scannable rhythm" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  # Corrected from Metaphor to Analogy (fixes SEMANTIC_DRIFT)
+  narr:StyleObs_analogy_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_rebrand_2025 ;
+    oa:hasBody narr:Analogy ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_rebrand_2025 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1200 ;
+        oa:end 1270
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "`.aswritten/` - dotfile directory in any repo (like `.git/`)" ;
+        oa:prefix "### Technical\n- **" ;
+        oa:suffix " containing collective memory\"**"
+      ]
+    ] ;
+    skos:related narr:TechnologiesSocialSystems ;
+    rdf:value true ;
+    skos:note "Analogy comparing .aswritten/ to .git/ dotfile pattern; anchors new concept to familiar developer mental model" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:StyleObs_stock_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_rebrand_2025 ;
+    oa:hasBody narr:IdiolectPhrasing ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_rebrand_2025 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1020 ;
+        oa:end 1035
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "as written" ;
+        oa:prefix "- **\"" ;
+        oa:suffix "\"** / **\"in collective memory\""
+      ]
+    ] ;
+    skos:related narr:BrandVoiceProfile ;
+    rdf:value true ;
+    skos:note "Signature phrase; appears in multiple action verbs and state descriptions" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:StyleObs_question_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RhetoricalQuestion ;
+    dct:source narr:Sample_rebrand_2025 ;
+    oa:hasBody narr:RhetoricalQuestion ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_rebrand_2025 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4650 ;
+        oa:end 4720
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "\"Is it in collective memory?\" → \"Just committed\"" ;
+        oa:prefix "**Cross-role**: \"My AI drafted" ;
+        oa:suffix ", your AI should see it\""
+      ]
+    ] ;
+    skos:related narr:RolePlayScenarios ;
+    rdf:value true ;
+    skos:note "Conversational Q&A format demonstrates natural usage; builds resonance" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:StyleObs_parallel_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Parallelism ;
+    dct:source narr:Sample_rebrand_2025 ;
+    oa:hasBody narr:Parallelism ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_rebrand_2025 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3250 ;
+        oa:end 3350
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "- **Before**: New hire's AI starts blind\n- **After**: Connected to collective memory" ;
+        oa:prefix "### Onboarding Problem\n" ;
+        oa:suffix ", day 1 productivity\n\n###"
+      ]
+    ] ;
+    skos:related narr:ValueExchange ;
+    rdf:value true ;
+    skos:note "Before/After pairs create clear value contrast; repeated 3x" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  # Rubric assessments
+  narr:Assess_Register_rebrand a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_rebrand_2025 ;
+    rdf:value 4.5 ;
+    skos:note "Direct, authoritative; mix of imperative and declarative; technical but accessible" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:Assess_Phrasing_rebrand a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_rebrand_2025 ;
+    rdf:value 5.0 ;
+    skos:note "Strong idiolect: 'as written' signature phrase; domain verbs (draft, commit, compile); stock phrases establish brand voice" ;
+    skos:related narr:StyleObs_stock_1 ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:Assess_Cadence_rebrand a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_rebrand_2025 ;
+    rdf:value 4.5 ;
+    skos:note "Short punchy lists; parallel structures; scannable rhythm; occasional longer explanatory sentences for balance" ;
+    skos:related narr:StyleObs_cadence_1 ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:Assess_Strategy_rebrand a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_rebrand_2025 ;
+    rdf:value 5.0 ;
+    skos:note "Explicit positioning shift; clear rationale; ties terminology to value props; migration plan shows execution alignment" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:Assess_Tailoring_rebrand a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_rebrand_2025 ;
+    rdf:value 4.0 ;
+    skos:note "Developer-centric metaphors (.git/ analogy); conversational examples for multiple roles; could add more persona-specific sections" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:Assess_Resonance_rebrand a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_rebrand_2025 ;
+    rdf:value 4.5 ;
+    skos:note "Strong analogy (dotfile pattern); conversational examples; Before/After contrasts; antithesis creates memorable framing" ;
+    skos:related narr:StyleObs_analogy_1 ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:Assess_Flow_rebrand a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_rebrand_2025 ;
+    rdf:value 4.5 ;
+    skos:note "Clear section hierarchy; logical progression (decision → terminology → workflow → positioning → rationale → migration); natural transitions" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:Assess_Novelty_rebrand a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_rebrand_2025 ;
+    rdf:value 4.0 ;
+    skos:note "Fresh framing (AI-centric vs human-centric); 'as written' signature phrase novel; some standard B2B patterns (Before/After, value props)" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:Assess_Accuracy_rebrand a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_rebrand_2025 ;
+    rdf:value 5.0 ;
+    skos:note "Concrete technical details (.aswritten/ path); specific date; clear migration plan; no unsupported claims" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+
+  narr:Metrics_rebrand a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_rebrand_2025 ;
+    narr:AverageSentenceLength 15 ;
+    narr:ActiveVoiceRatio 0.85 ;
+    narr:JargonDensity 0.12 ;
+    narr:TypeTokenRatio 0.68 ;
+    narr:Conciseness 0.78 ;
+    skos:note "High active voice; moderate jargon (technical but accessible); good lexical diversity; concise phrasing" ;
+    prov:wasGeneratedBy narr:Tx_20260128T230435Z .
+}

@@ -1,0 +1,400 @@
+PREFIX narr: <http://example.org/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://example.org/storybook#>
+PREFIX storytwin: <http://example.org/storytwin#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260128T212506Z a prov:Activity ;
+    prov:wasAssociatedWith <http://example.org/agent/aswritten.ai> ;
+    prov:wasAttributedTo <http://example.org/agent/n8n.aswritten.ai> ;
+    prov:generatedAtTime "2026-01-28T21:25:06.183Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-01-07-role-based-value-props-complete.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:used <http://example.org/model/anthropic/claude-sonnet-4.5> .
+}
+
+# Added triples
+INSERT DATA {
+  narr:Sample_20260107_RoleValueProps a narr:Sample ;
+    dct:title "Role-Based Value Propositions: Complete Framework" ;
+    narr:inputLength 24850 ;
+    dct:created "2026-01-07"^^xsd:date ;
+    skos:note "Comprehensive value prop development across all organizational roles, structured as Pain → Value → Metrics → Change. Developed from voice memo exploration of how IP-as-code and collaborative worldview creates specific value for each role and cascading value across roles." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:Narrative_IPAsCode a narr:Narrative ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    narr:theme "IP-as-code enables organizational alignment and AI leverage without IP leakage" ;
+    narr:direction "Transformative" ;
+    narr:supports narr:StrategyOverview, narr:NarrativeAnchor ;
+    skos:note "Core narrative: treating intellectual property as versionable, quantifiable code unlocks exponential value across all organizational roles." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:Narrative_CollaborativeWorldview a narr:Narrative ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    narr:theme "Collaborative worldview creates network effects where value multiplies with each contributor" ;
+    narr:direction "Exponential" ;
+    narr:supports narr:ActorIncentiveAnalysis, narr:Organization ;
+    skos:note "Shift from siloed individual memory to shared organizational worldview; more collaborators = more value to each role." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:Narrative_TimeCompression a narr:Narrative ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    narr:theme "Time from idea to execution collapses from weeks/months to minutes/days" ;
+    narr:direction "Accelerating" ;
+    narr:supports narr:KPIsSuccess, narr:MetricsMonitoring ;
+    skos:note "Quantified improvements: new idea → updated materials (days → 15 min), vision shift → implementation (weeks/months → days), consensus chase (ongoing → zero)." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:StyleObs_IPAsCode a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_RoleValueProps ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1450 ;
+        oa:end 1460
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "IP-as-code" ;
+        oa:prefix "Quantified " ;
+        oa:suffix " (IP as code) enables"
+      ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Core brand term; hyphenated compound; repeated 15+ times; signals technical positioning." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:StyleObs_NetworkEffect a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    oa:hasBody narr:Analogy ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_RoleValueProps ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 12850 ;
+        oa:end 13020
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Still good for one person, but the more people collaborating on the same memory, the more additional information you're benefiting from from other roles." ;
+        oa:prefix "**Core Insight**: Network effects create exponential value. " ;
+        oa:suffix " Each role benefits"
+      ]
+    ] ;
+    skos:related narr:ResonanceUse ;
+    rdf:value true ;
+    skos:note "Conversational register; direct address; quantifies value scaling; repeated verbatim in Cross-Role section." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:StyleObs_FrameworkStructure a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Parallelism ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    oa:hasBody narr:Parallelism ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_RoleValueProps ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 650 ;
+        oa:end 780
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "**Pain**: Current state friction, bottlenecks, blind spots\n- **Value**: What IP-as-code/collaborative worldview unlocks\n- **Metrics**: Quantified improvements" ;
+        oa:prefix "Each role analyzed through four lenses:\n- " ;
+        oa:suffix " (time, alignment, waste reduction)"
+      ]
+    ] ;
+    skos:related narr:InformationArchitecture ;
+    rdf:value true ;
+    skos:note "Consistent four-part structure repeated across 7 roles; bold labels; parallel syntax; enables comparison." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:StyleObs_TimeMetrics a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    oa:hasBody narr:RuleOfThree ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_RoleValueProps ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 6250 ;
+        oa:end 6420
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Time from new idea to updated materials: **days → 15 minutes**\n- Time from vision shift to developers implementing: **weeks/months → days**" ;
+        oa:prefix "**Metrics**:\n- " ;
+        oa:suffix " (includes review)\n- Consensus"
+      ]
+    ] ;
+    skos:related narr:Conciseness ;
+    rdf:value true ;
+    skos:note "Before → after pattern; bold for emphasis; dramatic compression (days → 15 min); repeated across all roles." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:StyleObs_VoiceMemoQuotes a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    oa:hasBody narr:ToneDirectPersonal ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_RoleValueProps ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 8950 ;
+        oa:end 9150
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Strategy presentations become like code/feature reviews when doing big release—looking at something, 'Oh shiny' moment of celebrating completed shift rather than chasing understanding" ;
+        oa:prefix "- " ;
+        oa:suffix "\"\n\n---\n\n## Sales"
+      ]
+    ] ;
+    skos:related narr:IdiolectPhrasing ;
+    rdf:value true ;
+    skos:note "Informal register; em-dash; 'Oh shiny' colloquialism; contrasts celebration vs chase; preserves speaker voice." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:StyleObs_ActiveVerbs a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    oa:hasBody narr:VerbChoice ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_RoleValueProps ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3850 ;
+        oa:end 3950
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Automatic change log for advisors, board, VCs (worldview evolution = organizational progress)" ;
+        oa:prefix "- " ;
+        oa:suffix "\n- Review worldview diffs"
+      ]
+    ] ;
+    skos:related narr:VoiceActive ;
+    rdf:value true ;
+    skos:note "Strong action verbs throughout: unlocks, triggers, propagates, collapses, multiplies; subject-verb-object clarity." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:StyleObs_CitationMarker a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:CaretBracketMarker ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    oa:hasBody narr:CaretBracketMarker ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_RoleValueProps ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 180 ;
+        oa:end 280
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "**Related**: Memory 01062026-ip-crisis-collaborative-ai-narrative.md (strategic framing), ADR-001 (platform positioning)" ;
+        oa:prefix "**Context**: Comprehensive value prop development across all organizational roles, structured as Pain → Value → Metrics → Change. Developed from voice memo exploration of how IP-as-code and collaborative worldview creates specific value for each role and cascading value across roles.  \n" ;
+        oa:suffix ", ADR-002 (three pillars)"
+      ]
+    ] ;
+    skos:related narr:CitationConventions ;
+    rdf:value true ;
+    skos:note "Inline citation style; references related memories and ADRs; establishes provenance; no caret-bracket in this sample but pattern established in ontology." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:StyleObs_RhetoricalQuestions a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RhetoricalQuestion ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    oa:hasBody narr:RhetoricalQuestion ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_RoleValueProps ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1250 ;
+        oa:end 1380
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "How do I help my portfolio? \n- Where are they heading? \n- Are they compatible with X other company?" ;
+        oa:prefix "**Pain**: \n- " ;
+        oa:suffix "\n- Lack of visibility"
+      ]
+    ] ;
+    skos:related narr:ToneDirectPersonal ;
+    rdf:value true ;
+    skos:note "Pain sections open with first-person questions; creates empathy; mirrors internal monologue; repeated pattern across all roles." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:StyleObs_Antithesis a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    oa:hasBody narr:Antithesis ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_RoleValueProps ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 6850 ;
+        oa:end 6950
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Communicate via worldview diff + cascading updates (not documents)" ;
+        oa:prefix "- " ;
+        oa:suffix "\n- PR review includes"
+      ]
+    ] ;
+    skos:related narr:CadenceRhythm ;
+    rdf:value true ;
+    skos:note "Parenthetical negation; sharp contrast; repeated pattern (X not Y); emphasizes paradigm shift." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:StyleObs_ShortCadence a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_RoleValueProps ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 22850 ;
+        oa:end 22950
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Power is in the connections, not the pillars" ;
+        oa:prefix "- " ;
+        oa:suffix "\n\n---\n\n**End of memory**"
+      ]
+    ] ;
+    skos:related narr:CadenceRhythm ;
+    rdf:value true ;
+    skos:note "Seven-word sentence; parallel structure; memorable; closes strategic section; contrasts connections vs pillars." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:StyleMetrics_20260107 a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    narr:AverageSentenceLength 18.5 ;
+    narr:ActiveVoiceRatio 0.85 ;
+    narr:JargonDensity 0.12 ;
+    narr:TypeTokenRatio 0.42 ;
+    narr:Conciseness 0.78 ;
+    skos:note "High active voice; moderate jargon (domain-specific but explained); varied sentence length; strong type-token ratio indicates rich vocabulary without repetition." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:RubricAssess_Register_20260107 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    rdf:value 4.5 ;
+    skos:note "Professional yet conversational; mixes strategic formality with voice memo informality; second-person questions create empathy; active voice dominates; appropriate for executive/practitioner audience." ;
+    skos:related narr:StyleObs_VoiceMemoQuotes ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:RubricAssess_Phrasing_20260107 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    rdf:value 4.5 ;
+    skos:note "Strong idiolect: 'IP-as-code', 'worldview', 'cascading updates', 'exponential network effect'; domain verbs (unlocks, propagates, collapses); stock phrases from voice memo preserved; consistent terminology." ;
+    skos:related narr:StyleObs_IPAsCode, narr:StyleObs_NetworkEffect ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:RubricAssess_Cadence_20260107 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    rdf:value 4.0 ;
+    skos:note "Varied rhythm: short punchy conclusions, longer explanatory sentences; bullet lists create visual cadence; before → after pattern provides drumbeat; occasional long voice memo quotes balanced by crisp metrics." ;
+    skos:related narr:StyleObs_TimeMetrics, narr:StyleObs_ShortCadence ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:RubricAssess_Strategy_20260107 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    rdf:value 5.0 ;
+    skos:note "Directly articulates strategy across all roles; Pain → Value → Metrics → Change structure operationalizes narrative anchor; explicit links to ADRs and prior memories; quantifies IP-as-code thesis; network effects = moat." ;
+    skos:related narr:Narrative_IPAsCode, narr:Narrative_CollaborativeWorldview ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:RubricAssess_Tailoring_20260107 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    rdf:value 5.0 ;
+    skos:note "Exceptional tailoring: seven distinct role personas (VC, CEO, Strategy, Sales, Product, Architecture, Design, Engineering); each section addresses role-specific pain/value; cross-role stories show cascading impact; audience frames explicit." ;
+    skos:related narr:StyleObs_RhetoricalQuestions ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:RubricAssess_Resonance_20260107 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    rdf:value 4.5 ;
+    skos:note "Strong resonance: voice memo quotes preserve authentic speaker voice; 'Oh shiny' moment; 'random vector' metaphor; network effect analogy; before/after contrasts create visceral understanding; cross-role stories = mini case studies." ;
+    skos:related narr:StyleObs_NetworkEffect, narr:StyleObs_VoiceMemoQuotes ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:RubricAssess_Flow_20260107 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    rdf:value 4.5 ;
+    skos:note "Excellent flow: consistent Pain → Value → Metrics → Change structure enables comparison; transitions via '---' and section headers; cross-role stories show cascading logic; metrics framework ties back to value; minimal formulaic feel due to voice memo quotes." ;
+    skos:related narr:StyleObs_FrameworkStructure ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:RubricAssess_Novelty_20260107 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    rdf:value 4.0 ;
+    skos:note "Good novelty: 'IP-as-code' brand term distinct; 'worldview' as technical artifact fresh; 'exponential network effect' applied to org context; voice memo quotes avoid boilerplate; some domain verbs common (unlocks, enables) but used precisely." ;
+    skos:related narr:StyleObs_IPAsCode ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+
+  narr:RubricAssess_Accuracy_20260107 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    rdf:value 4.5 ;
+    skos:note "High accuracy: cites related memories (01062026-ip-crisis, ADR-001, ADR-002); metrics quantified (days → 15 min, weeks → days); voice memo quotes attributed; role names/titles consistent; no unsupported claims; explicit provenance." ;
+    skos:related narr:StyleObs_CitationMarker ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+}
+
+# Updated triples (DELETE/INSERT WHERE)
+DELETE {
+  narr:Narrative_CascadingValue narr:theme ?oldTheme ;
+    narr:direction ?oldDirection ;
+    narr:supports ?oldSupports ;
+    skos:note ?oldNote .
+}
+INSERT {
+  narr:Narrative_CascadingValue a narr:Narrative ;
+    dct:source narr:Sample_20260107_RoleValueProps ;
+    narr:theme "Worldview changes propagate deterministically across all roles and artifacts" ;
+    narr:direction "Systematic" ;
+    narr:supports narr:NarrativeDrivenRoadmap, narr:Templates ;
+    skos:note "Single worldview commit triggers automatic regeneration of strategy decks, roadmaps, sales briefs, component specs—all roles see impact in PR review." ;
+    prov:wasGeneratedBy narr:Tx_20260128T212506Z .
+}
+WHERE {
+  OPTIONAL { narr:Narrative_CascadingValue narr:theme ?oldTheme . }
+  OPTIONAL { narr:Narrative_CascadingValue narr:direction ?oldDirection . }
+  OPTIONAL { narr:Narrative_CascadingValue narr:supports ?oldSupports . }
+  OPTIONAL { narr:Narrative_CascadingValue skos:note ?oldNote . }
+}

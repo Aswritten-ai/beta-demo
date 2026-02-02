@@ -1,0 +1,16 @@
+PREFIX narr: <http://example.org/narr#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://example.org/sb#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX storytwin: <http://example.org/storytwin#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260108_tony_deck_review_feedback a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-01-29T22:39:37.232Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-01-08-tony-deck-review-feedback.md" ;
+    sb:originRef "main" ;
+    storytwin:model "anthropic/claude-sonnet-4.5" .
+}

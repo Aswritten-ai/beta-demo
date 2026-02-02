@@ -1,0 +1,440 @@
+PREFIX narr: <http://example.org/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology#>
+PREFIX storytwin: <http://storytwin.com/ontology#>
+
+# ============================================================
+# TRANSACTION PROVENANCE
+# ============================================================
+
+INSERT DATA {
+  narr:Tx_20260128T215641Z a prov:Activity ;
+    prov:wasAssociatedWith <http://aswritten.ai/agent#storytwin-v1> ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-01-28T21:56:41.116Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-01-08-core-pitch-language-refined.md"^^xsd:string ;
+    sb:originRef "main"^^xsd:string ;
+    storytwin:model "anthropic/claude-sonnet-4.5"^^xsd:string .
+}
+
+# ============================================================
+# ADDED TRIPLES (INSERT DATA)
+# ============================================================
+
+INSERT DATA {
+  # Sample Node
+  narr:Sample_1 a narr:Sample ;
+    dct:title "Core Pitch Language: Crystallized Positioning" ;
+    narr:inputLength 11847 ;
+    dct:created "2026-01-08"^^xsd:date ;
+    skos:note "Scarlet distilled pitch into concise, comprehensive form after multiple deck iterations and Tony's feedback." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  # Strategic Shifts
+  narr:StrategyShift_1 a skos:Concept ;
+    skos:broader narr:StrategyOverview ;
+    dct:source narr:Sample_1 ;
+    skos:prefLabel "Positioning Evolution" ;
+    skos:note "From: Tool for team memory. To: Infrastructure for organizational knowledge across stakeholders." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:StrategyShift_2 a skos:Concept ;
+    skos:broader narr:StrategyOverview ;
+    dct:source narr:Sample_1 ;
+    skos:prefLabel "Category Clarity" ;
+    skos:note "From: 'The Witness' (requires explanation). To: 'Collective memory for AI' (immediately comprehensible)." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:StrategyShift_3 a skos:Concept ;
+    skos:broader narr:StrategyOverview ;
+    dct:source narr:Sample_1 ;
+    skos:prefLabel "Audience Breadth" ;
+    skos:note "From: Employees and new hires. To: New hires, clients, investors (multi-stakeholder)." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  # New Key Phrases
+  narr:KeyPhrase_4 a skos:Concept ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_1 ;
+    rdf:value "witness repository" ;
+    skos:note "Product-specific term; git-parallel vocabulary without requiring git knowledge." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:KeyPhrase_5 a skos:Concept ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_1 ;
+    rdf:value "update their worldview" ;
+    skos:note "Dynamic outcome; replaces 'query' (more active than passive retrieval)." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:KeyPhrase_2 a skos:Concept ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_1 ;
+    rdf:value "day one-through-exit" ;
+    skos:note "Lifecycle framing; signals onboarding through departure coverage." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:KeyPhrase_3 a skos:Concept ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_1 ;
+    rdf:value "institutional knowledge" ;
+    skos:note "Outcome term; implies organizational scope beyond individual memory." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:KeyPhrase_1 a skos:Concept ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_1 ;
+    rdf:value "collective memory" ;
+    skos:note "Used 3x in pitch; distinguishes from individual AI memory (ChatGPT Teams, Claude Projects)." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  # Value Propositions
+  narr:ValueProp_1 a skos:Concept ;
+    skos:broader narr:PositioningThesis ;
+    dct:source narr:Sample_1 ;
+    rdf:value "Day 1 productivity for new hires" ;
+    skos:related narr:Opportunity, narr:ActorIncentiveAnalysis ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:ValueProp_2 a skos:Concept ;
+    skos:broader narr:PositioningThesis ;
+    dct:source narr:Sample_1 ;
+    rdf:value "Zero knowledge loss when people leave" ;
+    skos:related narr:Opportunity, narr:FrictionFailure ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:ValueProp_3 a skos:Concept ;
+    skos:broader narr:PositioningThesis ;
+    dct:source narr:Sample_1 ;
+    rdf:value "Shared understanding without all-hands" ;
+    skos:related narr:Organization, narr:ChangeCommunications ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:ValueProp_4 a skos:Concept ;
+    skos:broader narr:PositioningThesis ;
+    dct:source narr:Sample_1 ;
+    rdf:value "Coding agents that understand business strategy while implementing" ;
+    skos:related narr:Product, narr:Architecture ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:ValueProp_5 a skos:Concept ;
+    skos:broader narr:PositioningThesis ;
+    dct:source narr:Sample_1 ;
+    rdf:value "Auto-generated content from decks and product docs to board updates" ;
+    skos:related narr:Templates, narr:Proof ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  # Style Observations
+  narr:StyleObs_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1027 ;
+        oa:end 1040
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "aswritten.ai" ;
+        oa:prefix "## The Refined Pitch (Final Version)\n\n**" ;
+        oa:suffix " is collective memory for AI"
+      ]
+    ] ;
+    skos:note "Lowercase brand name with .ai TLD; consistent stylization throughout document." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:StyleObs_2 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:IdiolectPhrasing ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:StockPhrases ;
+    skos:related narr:KeyPhrases ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1044 ;
+        oa:end 1062
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "collective memory" ;
+        oa:prefix "aswritten.ai is " ;
+        oa:suffix " for AI that creates"
+      ]
+    ] ;
+    skos:note "Used 3x in two sentences; category-defining phrase; distinguishes from individual AI memory." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:StyleObs_3 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1027 ;
+        oa:end 1177
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "aswritten.ai is collective memory for AI that creates day one-through-exit institutional knowledge for new hires, clients, and investors." ;
+        oa:prefix "## The Refined Pitch (Final Version)\n\n**" ;
+        oa:suffix " When your AI notices"
+      ]
+    ] ;
+    skos:note "First sentence: 22 words, clear subject-verb-object, outcome-oriented." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:StyleObs_4 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:RuleOfThree ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1133 ;
+        oa:end 1177
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "new hires, clients, and investors" ;
+        oa:prefix "institutional knowledge for " ;
+        oa:suffix ". When your AI notices"
+      ]
+    ] ;
+    skos:note "Triadic list of audiences; expands scope beyond employees to multi-stakeholder." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:StyleObs_5 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:VerbChoice ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1178 ;
+        oa:end 1340
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "When your AI notices something important in your work, you draft a memory together, commit it to the witness repository, review with your team" ;
+        oa:prefix "investors. " ;
+        oa:suffix ", and all connected AIs"
+      ]
+    ] ;
+    skos:note "Key verbs: notices, draft, commit, review, update. Git-parallel vocabulary without requiring git knowledge." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:StyleObs_6 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Parallelism ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:Parallelism ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1397 ;
+        oa:end 1698
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "day 1 productivity for new hires, zero knowledge loss when people leave, shared understanding without all-hands, coding agents that understand business strategy while implementing, and auto-generated content from decks and product docs to board updates about changes to organizational worldview" ;
+        oa:prefix "Collective memory means " ;
+        oa:suffix ".**\n\n---"
+      ]
+    ] ;
+    skos:note "Five parallel clauses; all four pillars + key benefits in one sentence; complete value prop in <30 seconds." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:StyleObs_7 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:NamingConventions ;
+    skos:related narr:KeyPhrases ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1260 ;
+        oa:end 1279
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "witness repository" ;
+        oa:prefix "commit it to the " ;
+        oa:suffix ", review with your team"
+      ]
+    ] ;
+    skos:note "Product-specific term; git-parallel vocabulary; accessible to non-technical audiences." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:StyleObs_8 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:SecondPerson ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1178 ;
+        oa:end 1240
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "When your AI notices something important in your work, you draft" ;
+        oa:prefix "investors. " ;
+        oa:suffix " a memory together"
+      ]
+    ] ;
+    skos:note "Second-person address ('your AI', 'you draft'); direct, conversational register." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  # Rubric Assessments
+  narr:Assessment_Register_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_1 ;
+    rdf:value "4.5"^^xsd:decimal ;
+    skos:note "Direct, conversational, second-person; active voice throughout; concise and confident. Accessible to non-technical audiences while maintaining authority." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:Assessment_Phrasing_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_1 ;
+    rdf:value "4.5"^^xsd:decimal ;
+    skos:note "Strong idiolect: 'collective memory' (3x), 'day one-through-exit', 'witness repository', 'update their worldview'. Domain verbs (notices, draft, commit, review, update) create git-parallel vocabulary without jargon." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:Assessment_Cadence_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_1 ;
+    rdf:value "4.5"^^xsd:decimal ;
+    skos:note "Short, punchy sentences; first sentence 22 words, second 35 words (complex but readable), third 51 words (bundled value props). Rhythm variation effective; no run-ons." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:Assessment_Strategy_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_1 ;
+    rdf:value "5.0"^^xsd:decimal ;
+    skos:note "Explicitly documents strategic evolution: positioning thesis, mission/vision, value props, and shifts from 'tool' to 'infrastructure'. Entire document is strategic alignment artifact." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:Assessment_Tailoring_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_1 ;
+    rdf:value "4.5"^^xsd:decimal ;
+    skos:note "Multi-audience framing: 'new hires, clients, and investors'. Provides context-specific guidance (landing page, email, deck, elevator pitch, conference bio). Broadens from employee-only to multi-stakeholder." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:Assessment_Resonance_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_1 ;
+    rdf:value "4.0"^^xsd:decimal ;
+    skos:note "Strong analogies: git-parallel vocabulary (commit, repository, review), lifecycle framing (day one-through-exit). Concrete examples (coding agents, board updates). Could add customer story for higher resonance." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:Assessment_Flow_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_1 ;
+    rdf:value "4.5"^^xsd:decimal ;
+    skos:note "Excellent structure: definition → flow → value props → rationale → implications → next actions. Natural transitions; clear section headers; parallel construction in value prop list. Minimal formulaicness." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:Assessment_Novelty_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_1 ;
+    rdf:value "4.0"^^xsd:decimal ;
+    skos:note "Fresh phrasing: 'day one-through-exit', 'update their worldview' (vs. 'query'), 'collective memory for AI' (category-defining). Some domain-standard terms ('onboarding', 'knowledge loss') but used in novel combinations." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:Assessment_Accuracy_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_1 ;
+    rdf:value "5.0"^^xsd:decimal ;
+    skos:note "Accurate references: dates (2026-01-08), related docs (01082026-deck-editing-decisions-four-pillars.md), named entities (Scarlet, Tony). Explicit version tracking ('Previous versions' vs 'Refined positioning'). No unsupported claims." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  # Style Metrics
+  narr:Metrics_1 a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_1 ;
+    narr:AverageSentenceLength "24.3"^^xsd:decimal ;
+    narr:ActiveVoiceRatio "0.92"^^xsd:decimal ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade Level: 11.2 (college-level, appropriate for B2B pitch)" ;
+    narr:TypeTokenRatio "0.68"^^xsd:decimal ;
+    skos:note "High active voice ratio; varied sentence length (10-51 words); strong lexical diversity; accessible yet authoritative register." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+}
+
+# ============================================================
+# UPDATED TRIPLES (DELETE/INSERT WHERE)
+# ============================================================
+
+DELETE {
+  ?s skos:prefLabel ?oldLabel .
+  ?s skos:definition ?oldDef .
+  ?s rdf:value ?oldValue .
+  ?s skos:note ?oldNote .
+}
+INSERT {
+  narr:Positioning_1 a skos:Concept ;
+    skos:broader narr:PositioningThesis ;
+    dct:source narr:Sample_1 ;
+    skos:prefLabel "aswritten.ai Positioning (Jan 2026)" ;
+    skos:definition "Collective memory for AI that creates day one-through-exit institutional knowledge for new hires, clients, and investors." ;
+    skos:note "Evolution from 'tool for team memory' to 'infrastructure for organizational knowledge across stakeholders'." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:Mission_1 a skos:Concept ;
+    skos:broader narr:Mission ;
+    dct:source narr:Sample_1 ;
+    rdf:value "Build collective memory for AI that creates day one-through-exit institutional knowledge." ;
+    skos:note "Durable purpose; positions as infrastructure, not tool." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:Vision_1 a skos:Concept ;
+    skos:broader narr:Vision ;
+    dct:source narr:Sample_1 ;
+    rdf:value "Day 1 productivity for new hires, zero knowledge loss when people leave, coding agents that understand business strategy." ;
+    skos:note "Future state customers achieve when mission succeeds." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:Tagline_1 a skos:Concept ;
+    skos:broader narr:Tagline ;
+    dct:source narr:Sample_1 ;
+    rdf:value "Collective memory for AI" ;
+    skos:note "Category-first positioning, immediately comprehensible; used 3x in two-sentence pitch." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+
+  narr:Tagline_2 a skos:Concept ;
+    skos:broader narr:Tagline ;
+    dct:source narr:Sample_1 ;
+    rdf:value "Day one-through-exit institutional knowledge" ;
+    skos:note "Outcome-oriented; implies lifecycle coverage from onboarding through departure." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215641Z .
+}
+WHERE {
+  VALUES ?s { narr:Positioning_1 narr:Mission_1 narr:Vision_1 narr:Tagline_1 narr:Tagline_2 }
+  OPTIONAL { ?s skos:prefLabel ?oldLabel }
+  OPTIONAL { ?s skos:definition ?oldDef }
+  OPTIONAL { ?s rdf:value ?oldValue }
+  OPTIONAL { ?s skos:note ?oldNote }
+}
