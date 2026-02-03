@@ -2,7 +2,7 @@
 
 This repository is connected to [aswritten.ai](https://aswritten.ai) for collective memory management.
 
-**MCP Endpoint:** `https://n8n.aswritten.ai/mcp/APP_NAME`
+**MCP Endpoint:** `https://n8n.aswritten.ai/mcp/{GITHUB_REPO}`
 
 ## What is Collective Memory?
 
@@ -22,7 +22,19 @@ Copy [.mcp.json](.mcp.json) to your project root or `~/.claude/mcp.json` for glo
 
 Restart Claude Code and verify tools appear: `mcp__aswritten__aswritten_compile`, etc.
 
-### 2. Set Repository Secrets (Admin)
+### 2. Connect Claude.ai (Web)
+
+To use collective memory in [Claude.ai](https://claude.ai) projects:
+
+1. Go to Claude.ai and create a new **Project**
+2. Open Project Settings → Custom Instructions
+3. Copy the contents of [CLAUDE_INSTRUCTIONS.md](CLAUDE_INSTRUCTIONS.md) into the instructions field
+4. Add MCP server configuration (requires Claude Pro):
+   - Server URL: `https://n8n.aswritten.ai/mcp/{GITHUB_REPO}`
+
+The custom instructions teach Claude the gap-aware collaboration workflow—introspecting collective memory, identifying gaps, and offering to save new knowledge.
+
+### 3. Set Repository Secrets (Admin)
 
 Required for extraction and content generation to work.
 
@@ -45,7 +57,7 @@ The link pre-fills:
 **Repository Variables** (Settings → Secrets and variables → Actions → Variables):
 - `N8N_WEBHOOK_BASE`: Your n8n webhook URL (ask your admin)
 
-### 3. Write Your First Memory
+### 4. Write Your First Memory
 
 Create a file like `.aswritten/memories/YYYY-MM-DD-topic.md`:
 
